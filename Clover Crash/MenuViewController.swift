@@ -81,6 +81,7 @@ extension MenuViewController: UICollectionViewDelegate {
 		cell.productIdentifier = product.identifier
 		cell.setName(product.name)
 		cell.setPrice(product.currentPrice)
+		cell.setPercentage(product.currentPercentVariation)
 	}
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		configureCell(cell, forItemAtIndexPath: indexPath)

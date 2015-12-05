@@ -17,10 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dEH-WE-T7x">
+                            <collectionView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dEH-WE-T7x">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wPE-Rs-YVH">
                                     <size key="itemSize" width="300" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -123,6 +123,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="top" secondItem="EuD-2N-w0M" secondAttribute="top" constant="5" id="BPw-C2-G1T"/>
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="centerX" secondItem="EuD-2N-w0M" secondAttribute="centerX" id="EaX-3j-Ohi"/>
@@ -131,7 +132,9 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="nameLabel" destination="kXL-46-yuU" id="AQ1-lx-3x2"/>
+                                            <outlet property="percentageLabel" destination="qdY-4x-1qS" id="yXj-OF-0RC"/>
                                             <outlet property="priceLabel" destination="4jp-CM-A0a" id="yht-Dp-2fA"/>
+                                            <outlet property="sideView" destination="3O8-wi-0DC" id="ekb-eg-3S2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -142,7 +145,7 @@
                             </collectionView>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="dEH-WE-T7x" secondAttribute="trailing" id="RDy-k1-IYX"/>
                             <constraint firstItem="dEH-WE-T7x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="bYz-lc-VwV"/>
