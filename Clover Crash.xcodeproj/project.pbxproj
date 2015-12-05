@@ -19,6 +19,7 @@
 		0344568A1C13253C009611E5 /* GCDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456891C13253C009611E5 /* GCDExtensions.swift */; };
 		0344568C1C132741009611E5 /* MenuProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344568B1C132741009611E5 /* MenuProductCell.swift */; };
 		034456CB1C134005009611E5 /* PusherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456CA1C134005009611E5 /* PusherManager.swift */; };
+		034456CD1C1344CD009611E5 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456CC1C1344CD009611E5 /* JSON.swift */; };
 		D8CB2069F9F25CAAA8625CBF /* Pods_Clover_Crash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186EA5E67012B28D0E2E915B /* Pods_Clover_Crash.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		034456891C13253C009611E5 /* GCDExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDExtensions.swift; sourceTree = "<group>"; };
 		0344568B1C132741009611E5 /* MenuProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuProductCell.swift; sourceTree = "<group>"; };
 		034456CA1C134005009611E5 /* PusherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PusherManager.swift; sourceTree = "<group>"; };
+		034456CC1C1344CD009611E5 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		186EA5E67012B28D0E2E915B /* Pods_Clover_Crash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clover_Crash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C42D710174042694E96DB3C /* Pods-Clover Crash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clover Crash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clover Crash/Pods-Clover Crash.release.xcconfig"; sourceTree = "<group>"; };
 		C7443A7914EE9B671465A954 /* Pods-Clover Crash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clover Crash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clover Crash/Pods-Clover Crash.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				034456891C13253C009611E5 /* GCDExtensions.swift */,
 				034456851C1322EC009611E5 /* FoundationExtensions.swift */,
 				034456871C1324A2009611E5 /* UIKitExtensions.swift */,
+				034456CC1C1344CD009611E5 /* JSON.swift */,
 				034456811C13218E009611E5 /* MenuModel.swift */,
 				034456711C13178B009611E5 /* MenuViewController.swift */,
 				0344568B1C132741009611E5 /* MenuProductCell.swift */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				034456CB1C134005009611E5 /* PusherManager.swift in Sources */,
+				034456CD1C1344CD009611E5 /* JSON.swift in Sources */,
 				034456721C13178B009611E5 /* MenuViewController.swift in Sources */,
 				0344568A1C13253C009611E5 /* GCDExtensions.swift in Sources */,
 				034456861C1322EC009611E5 /* FoundationExtensions.swift in Sources */,
