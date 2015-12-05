@@ -49,3 +49,18 @@ func == (lhs: MenuModel.Product, rhs: MenuModel.Product) -> Bool {
 		lhs.currentPercentVariation == rhs.currentPercentVariation &&
 		lhs.priceHistory == rhs.priceHistory
 }
+extension MenuModel.Product {
+	enum ParsingError: ErrorType {
+		case Identifier, Name, BasePrice, SalePrice, PercentVariation, History
+	}
+	init(json: JSON) throws {
+		guard let identifier = json["id"]?.asUInt else { throw ParsingError.Identifier }
+		guard let name = json["name"]?.asString else { throw ParsingError.Name }
+		guard let price = json["price"]?.asDecimal else { throw ParsingError.BasePrice }
+		guard let salePrice = json["sale_price"]?.asDecimal else { throw ParsingError.SalePrice }
+		guard let percentageChange = json["percentage_change"]?.asDecimal else { throw ParsingError.PercentVariation }
+		guard let history = json["history"]?.asArray?.flatMap({ $0.asDecimal }) else { throw ParsingError.History }
+		
+		self.init(identifier: identifier, name: name, basePrice: price, currentPrice: salePrice, currentPercentVariation: percentageChange, priceHistory: history)
+	}
+}
