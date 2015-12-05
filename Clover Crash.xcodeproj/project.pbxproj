@@ -18,6 +18,8 @@
 		034456881C1324A2009611E5 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456871C1324A2009611E5 /* UIKitExtensions.swift */; };
 		0344568A1C13253C009611E5 /* GCDExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456891C13253C009611E5 /* GCDExtensions.swift */; };
 		0344568C1C132741009611E5 /* MenuProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0344568B1C132741009611E5 /* MenuProductCell.swift */; };
+		034456CB1C134005009611E5 /* PusherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456CA1C134005009611E5 /* PusherManager.swift */; };
+		D8CB2069F9F25CAAA8625CBF /* Pods_Clover_Crash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186EA5E67012B28D0E2E915B /* Pods_Clover_Crash.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,10 @@
 		034456871C1324A2009611E5 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		034456891C13253C009611E5 /* GCDExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCDExtensions.swift; sourceTree = "<group>"; };
 		0344568B1C132741009611E5 /* MenuProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuProductCell.swift; sourceTree = "<group>"; };
+		034456CA1C134005009611E5 /* PusherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PusherManager.swift; sourceTree = "<group>"; };
+		186EA5E67012B28D0E2E915B /* Pods_Clover_Crash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Clover_Crash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C42D710174042694E96DB3C /* Pods-Clover Crash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clover Crash.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clover Crash/Pods-Clover Crash.release.xcconfig"; sourceTree = "<group>"; };
+		C7443A7914EE9B671465A954 /* Pods-Clover Crash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clover Crash.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clover Crash/Pods-Clover Crash.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CB2069F9F25CAAA8625CBF /* Pods_Clover_Crash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +59,8 @@
 			children = (
 				0344566E1C13178B009611E5 /* Clover Crash */,
 				0344566D1C13178B009611E5 /* Products */,
+				12066A08BF4698582004EBA8 /* Pods */,
+				7D02F1EB7CB64C45FE3AB81C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				0344566F1C13178B009611E5 /* AppDelegate.swift */,
+				034456CA1C134005009611E5 /* PusherManager.swift */,
 				034456831C132285009611E5 /* SwiftExtensions.swift */,
 				034456891C13253C009611E5 /* GCDExtensions.swift */,
 				034456851C1322EC009611E5 /* FoundationExtensions.swift */,
@@ -82,6 +92,23 @@
 			path = "Clover Crash";
 			sourceTree = "<group>";
 		};
+		12066A08BF4698582004EBA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C7443A7914EE9B671465A954 /* Pods-Clover Crash.debug.xcconfig */,
+				8C42D710174042694E96DB3C /* Pods-Clover Crash.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7D02F1EB7CB64C45FE3AB81C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				186EA5E67012B28D0E2E915B /* Pods_Clover_Crash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +116,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0344567E1C13178C009611E5 /* Build configuration list for PBXNativeTarget "Clover Crash" */;
 			buildPhases = (
+				665F7102446B75AD82448A1C /* Check Pods Manifest.lock */,
 				034456681C13178B009611E5 /* Sources */,
 				034456691C13178B009611E5 /* Frameworks */,
 				0344566A1C13178B009611E5 /* Resources */,
+				71538170DC1A7A7A14CF3F22 /* Embed Pods Frameworks */,
+				B9EE05C005D3F4F190999B6F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -148,11 +178,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		665F7102446B75AD82448A1C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		71538170DC1A7A7A14CF3F22 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clover Crash/Pods-Clover Crash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9EE05C005D3F4F190999B6F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Clover Crash/Pods-Clover Crash-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		034456681C13178B009611E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				034456CB1C134005009611E5 /* PusherManager.swift in Sources */,
 				034456721C13178B009611E5 /* MenuViewController.swift in Sources */,
 				0344568A1C13253C009611E5 /* GCDExtensions.swift in Sources */,
 				034456861C1322EC009611E5 /* FoundationExtensions.swift in Sources */,
@@ -271,21 +350,36 @@
 		};
 		0344567F1C13178C009611E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7443A7914EE9B671465A954 /* Pods-Clover Crash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Clover Crash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Clover",
+					Crash,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.boppl.hack.Clover-Crash";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		034456801C13178C009611E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C42D710174042694E96DB3C /* Pods-Clover Crash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Clover Crash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Clover",
+					Crash,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.boppl.hack.Clover-Crash";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -310,6 +404,7 @@
 				034456801C13178C009611E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
