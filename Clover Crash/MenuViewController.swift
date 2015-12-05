@@ -39,9 +39,22 @@ extension MenuViewController {
 
 //MARK: - UIViewController
 extension MenuViewController {
+	private func updateCollectionViewCellWidthToFullWidth() {
+		guard
+			let layout = productsCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout,
+			let fullWidth = view?.frame.width
+		else { return }
+		layout.itemSize.width = fullWidth
+	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		AppDelegate.sharedPusherManager.subscribeToEvent(productUpdateEventName, onChannel: menuChannelName, withBlock: updateModelWithJSON)
+	}
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		updateUIWithBlock {
+			self.updateCollectionViewCellWidthToFullWidth()
+		}
 	}
 }
 
