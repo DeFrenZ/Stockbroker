@@ -24,13 +24,11 @@ extension MenuModel {
 	struct Product {
 		var identifier: UInt
 		var name: String
-		var imageURL: NSURL? = nil
 		var priceHistory: [NSDecimal]
 		
-		init(identifier: UInt, name: String, imageURL: NSURL? = nil, priceHistory: [NSDecimal]) {
+		init(identifier: UInt, name: String, priceHistory: [NSDecimal]) {
 			self.identifier = identifier
 			self.name = name
-			self.imageURL =?? imageURL
 			self.priceHistory = priceHistory
 		}
 	}
@@ -46,6 +44,5 @@ func == (lhs: MenuModel.Product, rhs: MenuModel.Product) -> Bool {
 	return
 		lhs.identifier == rhs.identifier &&
 		lhs.name == rhs.name &&
-		lhs.imageURL == rhs.imageURL &&
 		lhs.priceHistory == rhs.priceHistory
 }

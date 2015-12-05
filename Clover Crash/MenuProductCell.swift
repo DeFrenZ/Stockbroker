@@ -13,7 +13,6 @@ import UIKit
 class MenuProductCell: UICollectionViewCell {
 	static let reuseIdentifier: String = "MenuProductCell"
 	
-	@IBOutlet private var imageView: UIImageView!
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 }
@@ -26,9 +25,6 @@ extension MenuProductCell {
 		return formatter
 	}()
 	
-	func setImageWithURL(url: NSURL) {
-		
-	}
 	func setName(name: String) {
 		dispatch_sync_main {
 			
