@@ -53,8 +53,10 @@ extension MenuProductCell {
 	}
 	func setPercentage(percentage: NSDecimal) {
 		dispatch_sync_main {
-			self.sideView.backgroundColor = MenuProductCell.colorForPercentage(percentage)
+			let percentageColor = MenuProductCell.colorForPercentage(percentage)
+			self.sideView.backgroundColor = percentageColor
 			self.percentageLabel.text = MenuProductCell.percentageFormatter.stringFromNumber(NSDecimalNumber(decimal: percentage))
+			self.percentageLabel.textColor = percentageColor
 		}
 	}
 }
