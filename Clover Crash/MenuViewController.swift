@@ -75,7 +75,7 @@ extension MenuViewController: UICollectionViewDelegate {
 
 //MARK: - Pusher
 private let menuChannelName = "menu"
-private let productUpdateEventName = "product"
+private let productUpdateEventName = "update"
 extension MenuViewController {
 	private func updateModelWithJSON(json: JSON) {
 		
