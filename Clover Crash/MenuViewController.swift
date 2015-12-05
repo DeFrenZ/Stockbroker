@@ -37,6 +37,14 @@ extension MenuViewController {
 	}
 }
 
+//MARK: - UIViewController
+extension MenuViewController {
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		AppDelegate.sharedPusherManager.subscribeToEvent(productUpdateEventName, onChannel: menuChannelName, withBlock: updateModelWithJSON)
+	}
+}
+
 //MARK: - UICollectionViewDataSource
 extension MenuViewController: UICollectionViewDataSource {
 	func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -61,5 +69,14 @@ extension MenuViewController: UICollectionViewDelegate {
 	}
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		configureCell(cell, forItemAtIndexPath: indexPath)
+	}
+}
+
+//MARK: - Pusher
+private let menuChannelName = "menu"
+private let productUpdateEventName = "product"
+extension MenuViewController {
+	private func updateModelWithJSON(json: JSON) {
+		
 	}
 }
