@@ -65,7 +65,8 @@ extension MenuViewController: UICollectionViewDelegate {
 		configureProductCell(productCell, forProduct: product)
 	}
 	private func configureProductCell(cell: MenuProductCell, forProduct product: MenuModel.Product) {
-		
+		cell.setName(product.name)
+		cell.setPrice(product.currentPrice)
 	}
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		configureCell(cell, forItemAtIndexPath: indexPath)
