@@ -26,8 +26,8 @@ final class PusherManager: NSObject {
 		guard let channel = channelsByName[channelName] else { fatalError("No Pusher channel created") }
 		channel.bindToEventNamed(eventName) { event in
 			guard
-				let jsonDictionary = event.data as? NSDictionary,
-				let json = try? JSON(foundationDictionary: jsonDictionary)
+				let eventPayload = event.data,
+				let json = try? JSON(foundationObject: eventPayload)
 			else { return }
 			block(json)
 		}
