@@ -22,27 +22,27 @@
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wPE-Rs-YVH">
-                                    <size key="itemSize" width="300" height="70"/>
+                                    <size key="itemSize" width="300" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="MenuProductCell" id="EuD-2N-w0M" customClass="MenuProductCell" customModule="Clover_Crash" customModuleProvider="target">
-                                        <rect key="frame" x="150" y="64" width="300" height="70"/>
+                                        <rect key="frame" x="150" y="64" width="300" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5pZ-Aj-DDu" userLabel="Real Content">
-                                                    <rect key="frame" x="10" y="5" width="280" height="60"/>
+                                                    <rect key="frame" x="10" y="5" width="280" height="70"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlW-AF-cPI">
-                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="60"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3O8-wi-0DC" userLabel="Side Color">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="60"/>
+                                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3O8-wi-0DC" userLabel="Side Color">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="15" height="70"/>
                                                                     <animations/>
                                                                     <color key="backgroundColor" red="1" green="0.18039215689999999" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <constraints>
@@ -50,48 +50,55 @@
                                                                     </constraints>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HDz-K9-d8X">
-                                                                    <rect key="frame" x="15" y="0.0" width="265" height="60"/>
+                                                                    <rect key="frame" x="15" y="0.0" width="265" height="70"/>
                                                                     <subviews>
-                                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lZl-dX-TNK">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="20"/>
+                                                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="5" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lZl-dX-TNK">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="265" height="30"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="PRODUCT_NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXL-46-yuU">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="134" height="20"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PRODUCT_NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXL-46-yuU">
+                                                                                    <rect key="frame" x="5" y="6" width="85" height="24"/>
                                                                                     <animations/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="£ XX.XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jp-CM-A0a">
-                                                                                    <rect key="frame" x="134" y="0.0" width="82" height="20"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£ XX.XX" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jp-CM-A0a">
+                                                                                    <rect key="frame" x="95" y="6" width="90" height="24"/>
                                                                                     <animations/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="90" id="PPh-zr-9JR"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="+XX %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdY-4x-1qS">
-                                                                                    <rect key="frame" x="216" y="0.0" width="50" height="20"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+XX %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdY-4x-1qS">
+                                                                                    <rect key="frame" x="190" y="6" width="70" height="24"/>
                                                                                     <animations/>
-                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="70" id="7Sx-Sr-Juo"/>
+                                                                                    </constraints>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                             </subviews>
                                                                             <animations/>
+                                                                            <edgeInsets key="layoutMargins" top="0.0" left="5" bottom="0.0" right="5"/>
                                                                         </stackView>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRe-ke-lAI">
-                                                                            <rect key="frame" x="0.0" y="20" width="265" height="40"/>
+                                                                            <rect key="frame" x="0.0" y="30" width="265" height="40"/>
                                                                             <subviews>
-                                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-2r-rD3" userLabel="Chart">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
+                                                                                <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-2r-rD3" userLabel="Chart" customClass="LineChartView" customModule="Charts">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="145" height="40"/>
                                                                                     <animations/>
-                                                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                                 </view>
                                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQc-z6-fgn">
-                                                                                    <rect key="frame" x="165" y="0.0" width="100" height="40"/>
+                                                                                    <rect key="frame" x="145" y="0.0" width="120" height="40"/>
                                                                                     <animations/>
                                                                                     <constraints>
-                                                                                        <constraint firstAttribute="width" constant="100" id="Ec3-AD-GVK"/>
+                                                                                        <constraint firstAttribute="width" constant="120" id="Ec3-AD-GVK"/>
                                                                                         <constraint firstAttribute="height" constant="40" id="T3U-Yw-1KS"/>
                                                                                     </constraints>
                                                                                     <state key="normal" title="ORDER"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 
 
@@ -18,6 +19,7 @@ class MenuProductCell: UICollectionViewCell {
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var percentageLabel: UILabel!
+	@IBOutlet private var chartView: ChartViewBase!
 }
 
 //MARK: - UI
@@ -57,6 +59,11 @@ extension MenuProductCell {
 			self.sideView.backgroundColor = percentageColor
 			self.percentageLabel.text = MenuProductCell.percentageFormatter.stringFromNumber(NSDecimalNumber(decimal: percentage))
 			self.percentageLabel.textColor = percentageColor
+		}
+	}
+	func setHistory(history: [NSDecimal]) {
+		dispatch_sync_main {
+			
 		}
 	}
 }
