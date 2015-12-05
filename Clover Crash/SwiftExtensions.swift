@@ -10,6 +10,16 @@ import Swift
 
 
 
+//MARK: - ??=
+infix operator ??= {
+	associativity right
+	precedence 90
+	assignment
+}
+func ??= <Wrapped> (inout optional: Wrapped?, @autoclosure defaultValue: () throws -> Wrapped?) rethrows {
+	optional = try optional ?? defaultValue()
+}
+
 //MARK: - =??
 infix operator =?? {
 associativity right

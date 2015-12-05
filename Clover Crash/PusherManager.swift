@@ -14,10 +14,22 @@ import Pusher
 final class PusherManager: NSObject {
 	private var client: PTPusher!
 	static private let apiKey: String = "f93950db757aaa7c02c2"
+	private var channelsByName: [String: PTPusherChannel] = [:]
 	
 	override init() {
 		super.init()
 		client = PTPusher(key: PusherManager.apiKey, delegate: self, encrypted: true)
+	}
+	func subscribeToEvent(eventName: String, onChannel channelName: String, withBlock block: JSON -> ()) {
+		channelsByName[channelName] ??= client.subscribeToChannelNamed(channelName)
+		guard let channel = channelsByName[channelName] else { fatalError("No Pusher channel created") }
+		channel.bindToEventNamed(eventName) { event in
+			guard
+				let jsonDictionary = event.data as? NSDictionary,
+				let json = try? JSON(foundationDictionary: jsonDictionary)
+			else { return }
+			block(json)
+		}
 	}
 }
 
