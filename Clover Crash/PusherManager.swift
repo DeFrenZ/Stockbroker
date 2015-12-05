@@ -19,6 +19,7 @@ final class PusherManager: NSObject {
 	override init() {
 		super.init()
 		client = PTPusher(key: PusherManager.apiKey, delegate: self, encrypted: true)
+		client.connect()
 	}
 	func subscribeToEvent(eventName: String, onChannel channelName: String, withBlock block: JSON -> ()) {
 		channelsByName[channelName] ??= client.subscribeToChannelNamed(channelName)
