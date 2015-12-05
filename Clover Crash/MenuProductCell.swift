@@ -27,7 +27,7 @@ extension MenuProductCell {
 	
 	func setName(name: String) {
 		dispatch_sync_main {
-			
+			self.nameLabel.text = name
 		}
 	}
 	func setPrice(price: NSDecimal) {

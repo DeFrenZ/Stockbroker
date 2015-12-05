@@ -11,7 +11,7 @@ import UIKit
 
 
 class MenuViewController: UIViewController {
-	var model: MenuModel? {
+	var model: MenuModel? = .emptyModel {
 		didSet {
 			guard let model = model where model != oldValue else { return }
 			updateUIWithModel(model)

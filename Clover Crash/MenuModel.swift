@@ -18,6 +18,11 @@ extension MenuModel: Equatable {}
 func == (lhs: MenuModel, rhs: MenuModel) -> Bool {
 	return lhs.products == rhs.products
 }
+extension MenuModel {
+	static var emptyModel: MenuModel {
+		return MenuModel(products: [])
+	}
+}
 
 //MARK: - Product
 extension MenuModel {
