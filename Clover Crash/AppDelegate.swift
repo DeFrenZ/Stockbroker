@@ -11,7 +11,16 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
+	
+	static var sharedDelegate: AppDelegate {
+		let sharedDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+		return sharedDelegate!
+	}
+	
 	var pusherManager: PusherManager = PusherManager()
+	static var sharedPusherManager: PusherManager {
+		return sharedDelegate.pusherManager
+	}
 	
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 		return true
