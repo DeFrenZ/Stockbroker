@@ -13,6 +13,7 @@ import UIKit
 class MenuProductCell: UICollectionViewCell {
 	static let reuseIdentifier: String = "MenuProductCell"
 	
+	var productIdentifier: UInt?
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 }
@@ -34,5 +35,14 @@ extension MenuProductCell {
 		dispatch_sync_main {
 			self.priceLabel.text = MenuProductCell.priceFormatter.stringFromNumber(NSDecimalNumber(decimal: price))
 		}
+	}
+}
+
+//MARK: - IBAction
+extension MenuProductCell {
+	static var selectedProductWithIdentifierActionName: Selector { return Selector("selectedProductWithIdentifier:") }
+	@IBAction private func orderButtonTapped(sender: UIButton) {
+		guard let productIdentifier = productIdentifier else { return }
+		performActionOnResponderChain(MenuProductCell.selectedProductWithIdentifierActionName, withObject: NSNumber(unsignedInteger: productIdentifier))
 	}
 }

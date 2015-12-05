@@ -65,11 +65,20 @@ extension MenuViewController: UICollectionViewDelegate {
 		configureProductCell(productCell, forProduct: product)
 	}
 	private func configureProductCell(cell: MenuProductCell, forProduct product: MenuModel.Product) {
+		cell.productIdentifier = product.identifier
 		cell.setName(product.name)
 		cell.setPrice(product.currentPrice)
 	}
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		configureCell(cell, forItemAtIndexPath: indexPath)
+	}
+}
+
+//MARK: - IBAction
+extension MenuViewController {
+	@IBAction private func selectedProductWithIdentifier(productIdentifier: NSNumber) {
+		let identifier = productIdentifier.unsignedIntegerValue
+		//TODO
 	}
 }
 

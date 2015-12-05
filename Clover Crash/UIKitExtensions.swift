@@ -10,6 +10,15 @@ import UIKit
 
 
 
+//MARK: - UIResponder
+extension UIResponder {
+	func performActionOnResponderChain(action: Selector, withObject object: NSObject? = nil) -> Bool {
+		guard let responder = targetForAction(action, withSender: object) else { return false }
+		responder.performSelector(action, withObject: object)
+		return true
+	}
+}
+
 //MARK: - UIViewController
 extension UIViewController {
 	func updateUIWithBlock(block: () -> ()) {
