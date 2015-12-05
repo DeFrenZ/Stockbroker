@@ -78,6 +78,19 @@ private let menuChannelName = "menu"
 private let productUpdateEventName = "update"
 extension MenuViewController {
 	private func updateModelWithJSON(json: JSON) {
-		
+		guard let newProducts = json.asArray?.flatMap({ try? MenuModel.Product(json: $0) }) else { return }
+		updateProducts(newProducts)
+	}
+	private func updateProducts(newProducts: [MenuModel.Product]) {
+		guard let currentProducts = model?.products else { return }
+		var updatedProducts = currentProducts
+		for product in newProducts {
+			if let index = updatedProducts.indexOf({ $0.identifier == product.identifier }) {
+				updatedProducts[index] = product
+			} else {
+				updatedProducts.append(product)
+			}
+		}
+		model?.products = updatedProducts
 	}
 }
