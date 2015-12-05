@@ -25,14 +25,20 @@ extension MenuModel {
 		var identifier: UInt
 		var name: String
 		var imageURL: NSURL? = nil
-		var price: NSDecimal
+		var priceHistory: [NSDecimal]
 		
-		init(identifier: UInt, name: String, imageURL: NSURL? = nil, price: NSDecimal) {
+		init(identifier: UInt, name: String, imageURL: NSURL? = nil, priceHistory: [NSDecimal]) {
 			self.identifier = identifier
 			self.name = name
 			self.imageURL =?? imageURL
-			self.price = price
+			self.priceHistory = priceHistory
 		}
+	}
+}
+extension MenuModel.Product {
+	var currentPrice: NSDecimal {
+		guard let currentPrice = priceHistory.last else { fatalError("No Prices in History") }
+		return currentPrice
 	}
 }
 extension MenuModel.Product: Equatable {}
@@ -41,5 +47,5 @@ func == (lhs: MenuModel.Product, rhs: MenuModel.Product) -> Bool {
 		lhs.identifier == rhs.identifier &&
 		lhs.name == rhs.name &&
 		lhs.imageURL == rhs.imageURL &&
-		lhs.price == rhs.price
+		lhs.priceHistory == rhs.priceHistory
 }
