@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return sharedDelegate!
 	}
 	
-	var pusherManager: PusherManager = PusherManager()
+	lazy var pusherManager: PusherManager = PusherManager()
 	static var sharedPusherManager: PusherManager {
 		return sharedDelegate.pusherManager
 	}
