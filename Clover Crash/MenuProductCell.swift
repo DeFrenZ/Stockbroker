@@ -55,12 +55,15 @@ extension MenuProductCell {
 		formatter.numberStyle = .PercentStyle
 		return formatter
 	}()
+	private static let maxPercentage: NSDecimal = 0.75
 	private static func colorForPercentage(percentage: NSDecimal) -> UIColor {
 		switch percentage {
-		case _ where percentage > 0: return .redColor()
+		case maxPercentage: return .redColor()
+		case _ where percentage > 0: return interpolateRGBA(from: colorForPercentage(0), to: colorForPercentage(maxPercentage), by: percentage.asCGFloat)
 		case 0: return .blueColor()
-		case _ where percentage < 0: return .greenColor()
-		default: fatalError("Switch should go here")
+		case -maxPercentage: return .greenColor()
+		case _ where percentage < 0: return interpolateRGBA(from: colorForPercentage(0), to: colorForPercentage(-maxPercentage), by: -percentage.asCGFloat)
+		default: fatalError("Switch shouldn't go here")
 		}
 	}
 	
