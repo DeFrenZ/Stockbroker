@@ -23,6 +23,26 @@ class MenuProductCell: UICollectionViewCell {
 	@IBOutlet private var chartView: ChartViewBase!
 }
 
+//MARK: - NSObject
+extension MenuProductCell {
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		self.realContentView.layer.cornerRadius = 5
+		self.layer.shadowOpacity = 0.05
+		//self.layer.shadowColor = UIColor.blackColor().CGColor
+		self.layer.shadowRadius = 3
+		self.layer.shadowOffset = CGSize(width: 0, height: 2)
+	}
+}
+
+//MARK: - UIView
+extension MenuProductCell {
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		layer.shadowPath = UIBezierPath(roundedRect: realContentView.frame, cornerRadius: layer.cornerRadius).CGPath
+	}
+}
+
 //MARK: - UI
 extension MenuProductCell {
 	private static let priceFormatter: NSNumberFormatter = {
