@@ -61,10 +61,10 @@ extension MenuModel.Product {
 	init(json: JSON) throws {
 		guard let identifier = json["id"]?.asString else { throw ParsingError.Identifier }
 		guard let name = json["name"]?.asString else { throw ParsingError.Name }
-		guard let price = json["price"]?.asDecimal else { throw ParsingError.BasePrice }
-		guard let salePrice = json["sale_price"]?.asDecimal else { throw ParsingError.SalePrice }
-		guard let percentageChange = json["percentage_change"]?.asDecimal else { throw ParsingError.PercentVariation }
-		guard let history = json["history"]?.asArray?.flatMap({ $0.asDecimal }) else { throw ParsingError.History }
+		guard let price = json["price"]?.asDecimal.map({ $0 / 100 }) else { throw ParsingError.BasePrice }
+		guard let salePrice = json["sale_price"]?.asDecimal.map({ $0 / 100 }) else { throw ParsingError.SalePrice }
+		guard let percentageChange = json["percent_change"]?.asDecimal else { throw ParsingError.PercentVariation }
+		let history = json["history"]?.asArray?.flatMap({ $0.asDecimal })
 		
 		self.init(identifier: identifier, name: name, basePrice: price, currentPrice: salePrice, currentPercentVariation: percentageChange, priceHistory: history)
 	}

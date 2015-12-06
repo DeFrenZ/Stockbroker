@@ -41,7 +41,12 @@ extension NSDecimal: FloatLiteralConvertible {
 
 public func +(var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
 	var result = NSDecimal()
-	NSDecimalAdd(&result, &lhs, &rhs, NSRoundingMode.RoundPlain)
+	NSDecimalAdd(&result, &lhs, &rhs, .RoundPlain)
+	return result
+}
+public func /(var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
+	var result = NSDecimal()
+	NSDecimalDivide(&result, &lhs, &rhs, .RoundPlain)
 	return result
 }
 
@@ -49,4 +54,11 @@ extension NSDecimal {
 	public var asInt: Int { return NSDecimalNumber(decimal: self).integerValue }
 	public var asUInt: UInt { return NSDecimalNumber(decimal: self).unsignedLongValue }
 	public var asDouble: Double { return NSDecimalNumber(decimal: self).doubleValue }
+}
+
+//MARK: - NSData
+extension NSData {
+	var isEmpty: Bool {
+		return length == 0
+	}
 }
