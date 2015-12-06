@@ -61,7 +61,7 @@ extension MenuProductCell {
 	private static let expensiveColor: UIColor = .redColor()
 	private static let normalColor: UIColor = stockbrokerYellow
 	private static let cheapColor: UIColor = "#01D902".toColor!
-	private static let interpolationTransform: CGFloat -> CGFloat = { tanh(10 * $0) }
+	private static let interpolationTransform: CGFloat -> CGFloat = { tanh(5 * $0) }
 	private static func colorForPercentage(percentage: NSDecimal) -> UIColor {
 		switch percentage {
 		case maxPercentage: return expensiveColor
