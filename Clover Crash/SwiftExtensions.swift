@@ -32,6 +32,14 @@ func =?? <T> (inout value: T, assignedValue: T?) {
 	}
 }
 
+//MARK: |>
+infix operator |> {
+	associativity left
+}
+public func |> <Input, Output>(lhs: Input, rhs: Input throws -> Output) rethrows -> Output {
+	return try rhs(lhs)
+}
+
 //MARK: - Indexable
 extension Indexable {
 	public subscript(safe safeIndex: Index) -> _Element? {
