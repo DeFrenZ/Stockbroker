@@ -21,7 +21,7 @@ final class GraphView: UIView {
 		let valueInterval: ClosedInterval<CGFloat> = -1 ... 1
 		let drawPoints = dataPoints.enumerate().map({ index, value -> CGPoint in
 			let x = CGFloat(index) / CGFloat(maxDataPoints) * self.bounds.width
-			let y = (value - valueInterval.start) / (valueInterval.end - valueInterval.start) * self.bounds.height
+			let y = (1 - (value - valueInterval.start) / (valueInterval.end - valueInterval.start)) * self.bounds.height
 			return CGPoint(x: x, y: y)
 		})
 		
