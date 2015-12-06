@@ -14,7 +14,8 @@ import Charts
 class MenuProductCell: UICollectionViewCell {
 	static let reuseIdentifier: String = "MenuProductCell"
 	
-	var productIdentifier: UInt?
+	var productIdentifier: String?
+	@IBOutlet private var realContentView: UIView!
 	@IBOutlet private var sideView: UIView!
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
@@ -73,6 +74,6 @@ extension MenuProductCell {
 	static var selectedProductWithIdentifierActionName: Selector { return Selector("selectedProductWithIdentifier:") }
 	@IBAction private func orderButtonTapped(sender: UIButton) {
 		guard let productIdentifier = productIdentifier else { return }
-		performActionOnResponderChain(MenuProductCell.selectedProductWithIdentifierActionName, withObject: NSNumber(unsignedInteger: productIdentifier))
+		performActionOnResponderChain(MenuProductCell.selectedProductWithIdentifierActionName, withObject: productIdentifier)
 	}
 }

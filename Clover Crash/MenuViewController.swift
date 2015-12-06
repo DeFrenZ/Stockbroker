@@ -90,9 +90,9 @@ extension MenuViewController: UICollectionViewDelegate {
 
 //MARK: - IBAction
 extension MenuViewController {
-	@IBAction private func selectedProductWithIdentifier(productIdentifier: NSNumber) {
-		let identifier = productIdentifier.unsignedIntegerValue
-		//TODO
+	@IBAction private func selectedProductWithIdentifier(productIdentifier: NSString) {
+		let productIdentifier = productIdentifier as String
+		orderProductWithIdentifier(productIdentifier)
 	}
 }
 

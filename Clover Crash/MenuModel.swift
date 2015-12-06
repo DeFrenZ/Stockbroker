@@ -27,20 +27,20 @@ extension MenuModel {
 //MARK: - Product
 extension MenuModel {
 	struct Product {
-		var identifier: UInt
+		var identifier: String
 		var name: String
 		var basePrice: NSDecimal
 		var currentPrice: NSDecimal
 		var currentPercentVariation: NSDecimal
-		var priceHistory: [NSDecimal]
+		var priceHistory: [NSDecimal] = []
 		
-		init(identifier: UInt, name: String, basePrice: NSDecimal, currentPrice: NSDecimal, currentPercentVariation: NSDecimal, priceHistory: [NSDecimal]) {
+		init(identifier: String, name: String, basePrice: NSDecimal, currentPrice: NSDecimal, currentPercentVariation: NSDecimal, priceHistory: [NSDecimal]? = nil) {
 			self.identifier = identifier
 			self.name = name
 			self.basePrice = basePrice
 			self.currentPrice = currentPrice
 			self.currentPercentVariation = currentPercentVariation
-			self.priceHistory = priceHistory
+			self.priceHistory =?? priceHistory
 		}
 	}
 }
@@ -56,10 +56,10 @@ func == (lhs: MenuModel.Product, rhs: MenuModel.Product) -> Bool {
 }
 extension MenuModel.Product {
 	enum ParsingError: ErrorType {
-		case Identifier, Name, BasePrice, SalePrice, PercentVariation, History
+		case Identifier, Name, BasePrice, SalePrice, PercentVariation
 	}
 	init(json: JSON) throws {
-		guard let identifier = json["id"]?.asUInt else { throw ParsingError.Identifier }
+		guard let identifier = json["id"]?.asString else { throw ParsingError.Identifier }
 		guard let name = json["name"]?.asString else { throw ParsingError.Name }
 		guard let price = json["price"]?.asDecimal else { throw ParsingError.BasePrice }
 		guard let salePrice = json["sale_price"]?.asDecimal else { throw ParsingError.SalePrice }
