@@ -72,3 +72,11 @@ extension NSData {
 		return length == 0
 	}
 }
+
+//MARK: - NSCharacterSet
+extension NSCharacterSet {
+	private static let _hexadecimalCharacterSet = NSCharacterSet(charactersInString: "0123456789aAbBcCdDeEfF")
+	public class func hexadecimalCharacterSet() -> NSCharacterSet {
+		return _hexadecimalCharacterSet
+	}
+}

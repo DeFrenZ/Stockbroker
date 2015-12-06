@@ -27,3 +27,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 }
 
+let stockbrokerYellow = "#F4D100".toColor!

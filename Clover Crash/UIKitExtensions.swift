@@ -24,6 +24,36 @@ func interpolateRGBA(from from: UIColor, to: UIColor, by: CGFloat) -> UIColor {
 	
 	return UIColor(red:	interpolatedRGBA[0], green: interpolatedRGBA[1], blue: interpolatedRGBA[2],	alpha: interpolatedRGBA[3])
 }
+enum UIColorParsingError: ErrorType {
+	case DoesNotStartWithHash, NotAnHexadecimalString, WrongNumberOfCharacters, CouldNotConvertToInteger
+}
+extension UIColor {
+	convenience init(hashNotation: String) throws {
+		guard hashNotation.hasPrefix("#") else { throw UIColorParsingError.DoesNotStartWithHash }
+		
+		let hexString = String(hashNotation.characters.dropFirst())
+		guard hexString.rangeOfCharacterFromSet(NSCharacterSet.hexadecimalCharacterSet().invertedSet) == nil else { throw UIColorParsingError.NotAnHexadecimalString }
+		
+		var colorHex = UInt32()
+		guard NSScanner(string: hexString).scanHexInt(&colorHex) else { throw UIColorParsingError.CouldNotConvertToInteger }
+		
+		let r, g, b, a: UInt32
+		switch hexString.characters.count {
+		case 3: (r, g, b, a) = ((colorHex >>  8) * 0x11, ((colorHex >>  4) &  0xF) * 0x11,  (colorHex       &  0xF) * 0x11,                     0xFF)
+		case 4: (r, g, b, a) = ((colorHex >> 12) * 0x11, ((colorHex >>  8) &  0xF) * 0x11, ((colorHex >> 4) &  0xF) * 0x11, (colorHex &  0xF) * 0x11)
+		case 6: (r, g, b, a) = ((colorHex >> 16)       , ((colorHex >>  8) & 0xFF)       ,  (colorHex       & 0xFF)       ,                     0xFF)
+		case 8: (r, g, b, a) = ((colorHex >> 24)       , ((colorHex >> 16) & 0xFF)       , ((colorHex >> 8) & 0xFF)       , (colorHex & 0xFF)       )
+		default: throw UIColorParsingError.WrongNumberOfCharacters
+		}
+		
+		let (red, green, blue, alpha) = (CGFloat(r) / 255, CGFloat(g) / 255, CGFloat(b) / 255, CGFloat(a) / 255)
+		self.init(red: red, green: green, blue: blue, alpha: alpha)
+	}
+}
+extension String {
+	var toColor: UIColor? { return try? UIColor(hashNotation: self) }
+}
+
 
 //MARK: - UIResponder
 extension UIResponder {

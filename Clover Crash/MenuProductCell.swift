@@ -55,13 +55,16 @@ extension MenuProductCell {
 		return formatter
 	}()
 	private static let maxPercentage: NSDecimal = 0.75
+	private static let expensiveColor: UIColor = .redColor()
+	private static let normalColor: UIColor = stockbrokerYellow
+	private static let cheapColor: UIColor = "#01D902".toColor!
 	private static let interpolationTransform: CGFloat -> CGFloat = { tanh(10 * $0) }
 	private static func colorForPercentage(percentage: NSDecimal) -> UIColor {
 		switch percentage {
-		case maxPercentage: return .redColor()
+		case maxPercentage: return expensiveColor
+		case 0: return normalColor
+		case -maxPercentage: return cheapColor
 		case _ where percentage > 0: return interpolateRGBA(from: colorForPercentage(0), to: colorForPercentage(maxPercentage), by: percentage.asCGFloat |> interpolationTransform)
-		case 0: return .blueColor()
-		case -maxPercentage: return .greenColor()
 		case _ where percentage < 0: return interpolateRGBA(from: colorForPercentage(0), to: colorForPercentage(-maxPercentage), by: -percentage.asCGFloat |> interpolationTransform)
 		default: fatalError("Switch shouldn't go here")
 		}
