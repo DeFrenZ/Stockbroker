@@ -15,6 +15,8 @@ class MenuViewController: UIViewController {
 		didSet {
 			guard let model = model where model != oldValue else { return }
 			updateUIWithModel(model)
+			
+			notifyUserIfNeeded()
 		}
 	}
 	
@@ -28,6 +30,27 @@ class MenuViewController: UIViewController {
 extension MenuViewController {
 	private func productAtIndexPath(indexPath: NSIndexPath) -> MenuModel.Product? {
 		return model?.products[indexPath.item]
+	}
+	private func notifyUserIfNeeded() {
+		guard let model = model else { return }
+		let favoritedProducts = model.products.filter({ self.favoritedProductsIdentifiers.contains($0.identifier) })
+		let productsToNotify = favoritedProducts.filter({ $0.currentPercentVariation <= MenuViewController.favoritedTriggerAmount })
+		guard !productsToNotify.isEmpty else { return }
+		
+		let messageStart: String
+		switch productsToNotify.count {
+		case 0: return
+		case 1: messageStart = "\(productsToNotify[0].name) is "
+		case 2: messageStart = "\(productsToNotify[0].name) and \(productsToNotify[1].name) are "
+		default: messageStart = "\(productsToNotify[0].name) and \(productsToNotify.count - 1) others are "
+		}
+		let message = messageStart + "really cheap right now!"
+		
+		let notification = UILocalNotification()
+		notification.alertTitle = message
+		UIApplication.sharedApplication().scheduleLocalNotification(notification)
+		
+		favoritedProductsIdentifiers.subtractInPlace(productsToNotify.map({ $0.identifier }))
 	}
 }
 
