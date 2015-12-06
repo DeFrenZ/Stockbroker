@@ -22,6 +22,7 @@
 		034456CD1C1344CD009611E5 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456CC1C1344CD009611E5 /* JSON.swift */; };
 		034456CF1C137BFD009611E5 /* RESTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456CE1C137BFD009611E5 /* RESTManager.swift */; };
 		034456D61C13DC7B009611E5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034456D51C13DC7B009611E5 /* GraphView.swift */; };
+		7286FC48791870A59680A5D0 /* Pods_Stockbroker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1446B5464A873DE00D2DB05F /* Pods_Stockbroker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		034456CC1C1344CD009611E5 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		034456CE1C137BFD009611E5 /* RESTManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTManager.swift; sourceTree = "<group>"; };
 		034456D51C13DC7B009611E5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		1446B5464A873DE00D2DB05F /* Pods_Stockbroker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stockbroker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EA49C12021550D849CFA68B /* Pods-Stockbroker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stockbroker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stockbroker/Pods-Stockbroker.debug.xcconfig"; sourceTree = "<group>"; };
 		B3A8E2F079885E7CAB86580C /* Pods-Stockbroker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stockbroker.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stockbroker/Pods-Stockbroker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7286FC48791870A59680A5D0 /* Pods_Stockbroker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +153,7 @@
 		7D02F1EB7CB64C45FE3AB81C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1446B5464A873DE00D2DB05F /* Pods_Stockbroker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,6 +193,7 @@
 				TargetAttributes = {
 					0344566B1C13178B009611E5 = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = CFJ43383J3;
 					};
 				};
 			};
@@ -402,16 +407,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Clover Crash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Clover",
-					Crash,
+					"$(PROJECT_DIR)/\"Clover Crash\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.boppl.hack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,15 +429,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Clover Crash/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Clover",
-					Crash,
+					"$(PROJECT_DIR)/\"Clover Crash\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.boppl.hack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
