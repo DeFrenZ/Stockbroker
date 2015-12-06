@@ -18,6 +18,9 @@ class MenuProductCell: UICollectionViewCell {
 		didSet { realContentView.layer.cornerRadius = 5 }
 	}
 	@IBOutlet private var sideView: UIView!
+	@IBOutlet private var favoriteView: UIView! {
+		didSet { favoriteView.layer.cornerRadius = favoriteView.bounds.width / 2 }
+	}
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var percentageLabel: UILabel!
@@ -91,6 +94,11 @@ extension MenuProductCell {
 	func setHistory(history: [NSDecimal]) {
 		dispatch_sync_main {
 			self.chartView.dataPoints = history.map({ $0.asCGFloat })
+		}
+	}
+	func setFavorited(favorited: Bool) {
+		dispatch_sync_main {
+			self.favoriteView.hidden = !favorited
 		}
 	}
 }

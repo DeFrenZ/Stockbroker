@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Menu View Controller-->
@@ -127,6 +129,28 @@
                                                         <constraint firstAttribute="bottom" secondItem="xlW-AF-cPI" secondAttribute="bottom" id="nra-l6-a3q"/>
                                                     </constraints>
                                                 </view>
+                                                <view opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yq4-GK-Qfw" userLabel="Favorite View">
+                                                    <rect key="frame" x="5" y="0.0" width="20" height="20"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="★" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6h-dI-TzU">
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <animations/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.95686274509803915" green="0.81960784313725488" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="e6h-dI-TzU" secondAttribute="bottom" id="4iF-Pu-h3T"/>
+                                                        <constraint firstAttribute="trailing" secondItem="e6h-dI-TzU" secondAttribute="trailing" id="GFU-8i-Tvk"/>
+                                                        <constraint firstAttribute="width" constant="20" id="MDC-IR-pBU"/>
+                                                        <constraint firstItem="e6h-dI-TzU" firstAttribute="leading" secondItem="yq4-GK-Qfw" secondAttribute="leading" id="dPG-2q-PZc"/>
+                                                        <constraint firstAttribute="width" secondItem="yq4-GK-Qfw" secondAttribute="height" id="e3n-N9-puD"/>
+                                                        <constraint firstItem="e6h-dI-TzU" firstAttribute="top" secondItem="yq4-GK-Qfw" secondAttribute="top" id="jqK-Jr-2m9"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -137,10 +161,13 @@
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="top" secondItem="EuD-2N-w0M" secondAttribute="top" constant="5" id="BPw-C2-G1T"/>
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="centerX" secondItem="EuD-2N-w0M" secondAttribute="centerX" id="EaX-3j-Ohi"/>
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="centerY" secondItem="EuD-2N-w0M" secondAttribute="centerY" id="Mbs-w0-PRA"/>
+                                            <constraint firstItem="yq4-GK-Qfw" firstAttribute="centerY" secondItem="5pZ-Aj-DDu" secondAttribute="top" constant="5" id="QM3-9v-h6o"/>
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="leading" secondItem="EuD-2N-w0M" secondAttribute="leading" constant="10" id="YQG-h9-wvz"/>
+                                            <constraint firstItem="yq4-GK-Qfw" firstAttribute="centerX" secondItem="5pZ-Aj-DDu" secondAttribute="leading" constant="5" id="reV-4l-LuR"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="chartView" destination="KUg-2r-rD3" id="bVP-yD-naS"/>
+                                            <outlet property="favoriteView" destination="yq4-GK-Qfw" id="FeI-6e-hGV"/>
                                             <outlet property="nameLabel" destination="kXL-46-yuU" id="AQ1-lx-3x2"/>
                                             <outlet property="percentageLabel" destination="qdY-4x-1qS" id="yXj-OF-0RC"/>
                                             <outlet property="priceLabel" destination="4jp-CM-A0a" id="yht-Dp-2fA"/>

@@ -33,14 +33,16 @@ extension MenuModel {
 		var currentPrice: NSDecimal
 		var currentPercentVariation: NSDecimal
 		var priceHistory: [NSDecimal] = []
+		var favorited: Bool = false
 		
-		init(identifier: String, name: String, basePrice: NSDecimal, currentPrice: NSDecimal, currentPercentVariation: NSDecimal, priceHistory: [NSDecimal]? = nil) {
+		init(identifier: String, name: String, basePrice: NSDecimal, currentPrice: NSDecimal, currentPercentVariation: NSDecimal, priceHistory: [NSDecimal]? = nil, favorited: Bool? = nil) {
 			self.identifier = identifier
 			self.name = name
 			self.basePrice = basePrice
 			self.currentPrice = currentPrice
 			self.currentPercentVariation = currentPercentVariation
 			self.priceHistory =?? priceHistory
+			self.favorited =?? favorited
 		}
 	}
 }
@@ -52,7 +54,8 @@ func == (lhs: MenuModel.Product, rhs: MenuModel.Product) -> Bool {
 		lhs.basePrice == rhs.basePrice &&
 		lhs.currentPrice == rhs.currentPrice &&
 		lhs.currentPercentVariation == rhs.currentPercentVariation &&
-		lhs.priceHistory == rhs.priceHistory
+		lhs.priceHistory == rhs.priceHistory &&
+		lhs.favorited == rhs.favorited
 }
 extension MenuModel.Product {
 	enum ParsingError: ErrorType {

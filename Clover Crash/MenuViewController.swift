@@ -18,6 +18,9 @@ class MenuViewController: UIViewController {
 		}
 	}
 	
+	private var favoritedProductsIdentifiers: Set<String> = []
+	static let favoritedTriggerAmount: NSDecimal = -0.1
+	
 	@IBOutlet private var productsCollectionView: UICollectionView!
 }
 
@@ -96,9 +99,21 @@ extension MenuViewController: UICollectionViewDelegate {
 		cell.setPrice(product.currentPrice)
 		cell.setPercentage(product.currentPercentVariation)
 		cell.setHistory(product.priceHistory)
+		cell.setFavorited(product.favorited)
 	}
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		configureCell(cell, forItemAtIndexPath: indexPath)
+	}
+	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+		collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+		guard var product = model?.products[safe: indexPath.item] else { return }
+		product.favorited = !product.favorited
+		if product.favorited {
+			favoritedProductsIdentifiers.insert(product.identifier)
+		} else {
+			favoritedProductsIdentifiers.remove(product.identifier)
+		}
+		model?.products[indexPath.item] = product
 	}
 }
 
@@ -122,7 +137,8 @@ extension MenuViewController {
 	private func updateProducts(newProducts: [MenuModel.Product]) {
 		guard let currentProducts = model?.products else { return }
 		var updatedProducts = currentProducts
-		for product in newProducts {
+		for var product in newProducts {
+			product.favorited = favoritedProductsIdentifiers.contains(product.identifier)
 			if let index = updatedProducts.indexOf({ $0.identifier == product.identifier }) {
 				updatedProducts[index] = product
 			} else {
