@@ -17,7 +17,7 @@ final class GraphView: UIView {
 	override func drawRect(rect: CGRect) {
 		super.drawRect(rect)
 		
-		let maxDataPoints = 50
+		let maxDataPoints = 30
 		let valueInterval: ClosedInterval<CGFloat> = -1 ... 1
 		let drawPoints = dataPoints.enumerate().map({ index, value -> CGPoint in
 			let x = CGFloat(index) / CGFloat(maxDataPoints) * self.bounds.width
