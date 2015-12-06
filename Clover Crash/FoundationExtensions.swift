@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 
 
@@ -39,12 +40,20 @@ extension NSDecimal: FloatLiteralConvertible {
 	}
 }
 
-public func +(var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
+public prefix func -(value: NSDecimal) -> NSDecimal {
+	return value * (-1)
+}
+public func + (var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
 	var result = NSDecimal()
 	NSDecimalAdd(&result, &lhs, &rhs, .RoundPlain)
 	return result
 }
-public func /(var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
+public func * (var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
+	var result = NSDecimal()
+	NSDecimalMultiply(&result, &lhs, &rhs, .RoundPlain)
+	return result
+}
+public func / (var lhs: NSDecimal, var rhs: NSDecimal) -> NSDecimal {
 	var result = NSDecimal()
 	NSDecimalDivide(&result, &lhs, &rhs, .RoundPlain)
 	return result
@@ -54,6 +63,7 @@ extension NSDecimal {
 	public var asInt: Int { return NSDecimalNumber(decimal: self).integerValue }
 	public var asUInt: UInt { return NSDecimalNumber(decimal: self).unsignedLongValue }
 	public var asDouble: Double { return NSDecimalNumber(decimal: self).doubleValue }
+	public var asCGFloat: CGFloat { return CGFloat(asDouble) }
 }
 
 //MARK: - NSData
