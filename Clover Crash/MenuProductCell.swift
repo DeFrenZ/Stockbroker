@@ -14,7 +14,9 @@ class MenuProductCell: UICollectionViewCell {
 	static let reuseIdentifier: String = "MenuProductCell"
 	
 	var productIdentifier: String?
-	@IBOutlet private var realContentView: UIView!
+	@IBOutlet private var realContentView: UIView! {
+		didSet { realContentView.layer.cornerRadius = 5 }
+	}
 	@IBOutlet private var sideView: UIView!
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
@@ -26,7 +28,6 @@ class MenuProductCell: UICollectionViewCell {
 extension MenuProductCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
-		self.realContentView.layer.cornerRadius = 5
 		self.layer.shadowOpacity = 0.05
 		self.layer.shadowRadius = 3
 		self.layer.shadowOffset = CGSize(width: 0, height: 2)
