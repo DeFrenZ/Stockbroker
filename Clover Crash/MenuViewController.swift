@@ -48,7 +48,20 @@ extension MenuViewController {
 	}
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		AppDelegate.sharedPusherManager.subscribeToEvent(productUpdateEventName, onChannel: menuChannelName, withBlock: updateModelWithJSON)
+		getMenu { [weak self] productsResult in
+			guard let sself = self else { return }
+			
+			let products: [MenuModel.Product]
+			do {
+				products = try productsResult()
+			} catch {
+				print("REST error:", error)
+				return
+			}
+			sself.updateProducts(products)
+			
+			AppDelegate.sharedPusherManager.subscribeToEvent(productUpdateEventName, onChannel: menuChannelName, withBlock: sself.updateModelWithJSON)
+		}
 	}
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
@@ -82,6 +95,7 @@ extension MenuViewController: UICollectionViewDelegate {
 		cell.setName(product.name)
 		cell.setPrice(product.currentPrice)
 		cell.setPercentage(product.currentPercentVariation)
+		cell.setHistory(product.priceHistory)
 	}
 	func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
 		configureCell(cell, forItemAtIndexPath: indexPath)
@@ -101,6 +115,7 @@ private let menuChannelName = "menu"
 private let productUpdateEventName = "update"
 extension MenuViewController {
 	private func updateModelWithJSON(json: JSON) {
+		print("Got Pusher JSON:", json)
 		guard let newProducts = json.asArray?.flatMap({ try? MenuModel.Product(json: $0) }) else { return }
 		updateProducts(newProducts)
 	}

@@ -28,7 +28,10 @@ final class PusherManager: NSObject {
 			guard
 				let eventPayload = event.data,
 				let json = try? JSON(foundationObject: eventPayload)
-			else { return }
+			else {
+				print("Event error:", event)
+				return
+			}
 			block(json)
 		}
 	}
