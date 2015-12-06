@@ -58,7 +58,7 @@ func orderProductWithIdentifier(productIdentifier: String) {
 	let request = NSMutableURLRequest(URL: requestURL, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 5)
 	request.HTTPMethod = "POST"
 	request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-	let body: JSON = ["sku": .StringValue(productIdentifier)]
+	let body: JSON = ["id": .StringValue(productIdentifier)]
 	request.HTTPBody = body.encodeToData()
 	let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
 		if let error = error {
