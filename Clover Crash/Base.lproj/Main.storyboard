@@ -8,7 +8,7 @@
         <!--Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="Clover_Crash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="Stockbroker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="MenuProductCell" id="EuD-2N-w0M" customClass="MenuProductCell" customModule="Clover_Crash" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="MenuProductCell" id="EuD-2N-w0M" customClass="MenuProductCell" customModule="Stockbroker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="64" width="300" height="85"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -59,7 +59,7 @@
                                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-2r-rD3" userLabel="Chart" customClass="LineChartView" customModule="Charts">
+                                                                        <view opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUg-2r-rD3" userLabel="Chart" customClass="GraphView" customModule="Stockbroker">
                                                                             <rect key="frame" x="0.0" y="35" width="100" height="40"/>
                                                                             <animations/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -140,6 +140,7 @@
                                             <constraint firstItem="5pZ-Aj-DDu" firstAttribute="leading" secondItem="EuD-2N-w0M" secondAttribute="leading" constant="10" id="YQG-h9-wvz"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="chartView" destination="KUg-2r-rD3" id="bVP-yD-naS"/>
                                             <outlet property="nameLabel" destination="kXL-46-yuU" id="AQ1-lx-3x2"/>
                                             <outlet property="percentageLabel" destination="qdY-4x-1qS" id="yXj-OF-0RC"/>
                                             <outlet property="priceLabel" destination="4jp-CM-A0a" id="yht-Dp-2fA"/>

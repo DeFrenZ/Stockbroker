@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Charts
 
 
 
@@ -20,7 +19,7 @@ class MenuProductCell: UICollectionViewCell {
 	@IBOutlet private var nameLabel: UILabel!
 	@IBOutlet private var priceLabel: UILabel!
 	@IBOutlet private var percentageLabel: UILabel!
-	@IBOutlet private var chartView: ChartViewBase!
+	@IBOutlet private var chartView: GraphView!
 }
 
 //MARK: - NSObject
@@ -87,7 +86,7 @@ extension MenuProductCell {
 	}
 	func setHistory(history: [NSDecimal]) {
 		dispatch_sync_main {
-			
+			self.chartView.dataPoints = history.map({ $0.asCGFloat })
 		}
 	}
 }

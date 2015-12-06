@@ -1,5 +1,4 @@
 PODS:
-  - Charts (2.1.6)
   - libPusher (1.6.1):
     - libPusher/Core (= 1.6.1)
   - libPusher/Core (1.6.1):
@@ -7,11 +6,9 @@ PODS:
   - SocketRocket (0.4.1)
 
 DEPENDENCIES:
-  - Charts
   - libPusher (~> 1.6.1)
 
 SPEC CHECKSUMS:
-  Charts: 5e1e5ac23898e5b09d226a2fc3e9d86bc281937e
   libPusher: 5ea58aeb83fa4ac1f5d8ef8543b1def6ace997b8
   SocketRocket: ee0b5c34182d37bb4f1f8d628bbe737718126daa
 

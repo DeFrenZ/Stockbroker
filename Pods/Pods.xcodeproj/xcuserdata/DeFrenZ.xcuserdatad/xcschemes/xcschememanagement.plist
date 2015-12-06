@@ -4,12 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Charts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-Clover Crash.xcscheme</key>
+		<key>Pods-Stockbroker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,11 +22,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>24090FBCEF7A50AE384678B5C071804B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>68C2CC34B364F239C5FA621E4B017473</key>
 		<dict>
 			<key>primary</key>
@@ -42,7 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8DB9068971AB71A13B2B21870FCE113</key>
+		<key>CC813832B8703A653D684CA56E550E45</key>
 		<dict>
 			<key>primary</key>
 			<true/>
