@@ -13,7 +13,7 @@ import Pusher
 
 final class PusherManager: NSObject {
 	private var client: PTPusher!
-	static private let apiKey: String = "5577ecaa27f974815b3b"
+	static private let apiKey: String = "850353b9b1eafa7fff85"
 	private var channelsByName: [String: PTPusherChannel] = [:]
 	
 	override init() {
