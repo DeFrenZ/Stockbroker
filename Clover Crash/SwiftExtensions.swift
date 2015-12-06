@@ -38,3 +38,8 @@ extension Indexable {
 		return safeIndex.distanceTo(endIndex) > 0 ? self[safeIndex] : nil
 	}
 }
+
+//MARK: - Globals
+func clamp<T: Comparable>(value: T, minimum: T, maximum: T) -> T {
+	return max(min(value, maximum), minimum)
+}
