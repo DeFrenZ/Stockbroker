@@ -79,23 +79,63 @@
 		0344566E1C13178B009611E5 /* Clover Crash */ = {
 			isa = PBXGroup;
 			children = (
-				0344566F1C13178B009611E5 /* AppDelegate.swift */,
-				034456CA1C134005009611E5 /* PusherManager.swift */,
-				034456CE1C137BFD009611E5 /* RESTManager.swift */,
+				034456D41C13C542009611E5 /* App */,
+				034456D11C13C4F4009611E5 /* Singletons */,
+				034456D01C13C4EB009611E5 /* Extensions */,
+				034456D21C13C507009611E5 /* Data */,
+				034456D31C13C514009611E5 /* Scene */,
+			);
+			path = "Clover Crash";
+			sourceTree = "<group>";
+		};
+		034456D01C13C4EB009611E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
 				034456831C132285009611E5 /* SwiftExtensions.swift */,
 				034456891C13253C009611E5 /* GCDExtensions.swift */,
 				034456851C1322EC009611E5 /* FoundationExtensions.swift */,
 				034456871C1324A2009611E5 /* UIKitExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		034456D11C13C4F4009611E5 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				034456CA1C134005009611E5 /* PusherManager.swift */,
+				034456CE1C137BFD009611E5 /* RESTManager.swift */,
+			);
+			name = Singletons;
+			sourceTree = "<group>";
+		};
+		034456D21C13C507009611E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
 				034456CC1C1344CD009611E5 /* JSON.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		034456D31C13C514009611E5 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
 				034456811C13218E009611E5 /* MenuModel.swift */,
 				034456711C13178B009611E5 /* MenuViewController.swift */,
 				0344568B1C132741009611E5 /* MenuProductCell.swift */,
 				034456731C13178B009611E5 /* Main.storyboard */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		034456D41C13C542009611E5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0344566F1C13178B009611E5 /* AppDelegate.swift */,
 				034456761C13178B009611E5 /* Assets.xcassets */,
 				034456781C13178B009611E5 /* LaunchScreen.storyboard */,
 				0344567B1C13178C009611E5 /* Info.plist */,
 			);
-			path = "Clover Crash";
+			name = App;
 			sourceTree = "<group>";
 		};
 		12066A08BF4698582004EBA8 /* Pods */ = {
@@ -118,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0344566B1C13178B009611E5 /* Clover Crash */ = {
+		0344566B1C13178B009611E5 /* Stockbroker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0344567E1C13178C009611E5 /* Build configuration list for PBXNativeTarget "Clover Crash" */;
+			buildConfigurationList = 0344567E1C13178C009611E5 /* Build configuration list for PBXNativeTarget "Stockbroker" */;
 			buildPhases = (
 				665F7102446B75AD82448A1C /* Check Pods Manifest.lock */,
 				034456681C13178B009611E5 /* Sources */,
@@ -133,9 +173,9 @@
 			);
 			dependencies = (
 			);
-			name = "Clover Crash";
+			name = Stockbroker;
 			productName = "Clover Crash";
-			productReference = 0344566C1C13178B009611E5 /* Clover Crash.app */;
+			productReference = 0344566C1C13178B009611E5 /* Stockbroker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +206,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0344566B1C13178B009611E5 /* Clover Crash */,
+				0344566B1C13178B009611E5 /* Stockbroker */,
 			);
 		};
 /* End PBXProject section */
@@ -405,7 +445,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0344567E1C13178C009611E5 /* Build configuration list for PBXNativeTarget "Clover Crash" */ = {
+		0344567E1C13178C009611E5 /* Build configuration list for PBXNativeTarget "Stockbroker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0344567F1C13178C009611E5 /* Debug */,

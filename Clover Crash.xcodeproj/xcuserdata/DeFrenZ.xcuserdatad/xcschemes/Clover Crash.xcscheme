@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0344566B1C13178B009611E5"
-               BuildableName = "Clover Crash.app"
-               BlueprintName = "Clover Crash"
+               BuildableName = "Stockbroker.app"
+               BlueprintName = "Stockbroker"
                ReferencedContainer = "container:Clover Crash.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0344566B1C13178B009611E5"
-            BuildableName = "Clover Crash.app"
-            BlueprintName = "Clover Crash"
+            BuildableName = "Stockbroker.app"
+            BlueprintName = "Stockbroker"
             ReferencedContainer = "container:Clover Crash.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0344566B1C13178B009611E5"
-            BuildableName = "Clover Crash.app"
-            BlueprintName = "Clover Crash"
+            BuildableName = "Stockbroker.app"
+            BlueprintName = "Stockbroker"
             ReferencedContainer = "container:Clover Crash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0344566B1C13178B009611E5"
-            BuildableName = "Clover Crash.app"
-            BlueprintName = "Clover Crash"
+            BuildableName = "Stockbroker.app"
+            BlueprintName = "Stockbroker"
             ReferencedContainer = "container:Clover Crash.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

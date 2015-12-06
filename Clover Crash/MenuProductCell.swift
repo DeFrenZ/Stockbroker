@@ -29,7 +29,6 @@ extension MenuProductCell {
 		super.awakeFromNib()
 		self.realContentView.layer.cornerRadius = 5
 		self.layer.shadowOpacity = 0.05
-		//self.layer.shadowColor = UIColor.blackColor().CGColor
 		self.layer.shadowRadius = 3
 		self.layer.shadowOffset = CGSize(width: 0, height: 2)
 	}
